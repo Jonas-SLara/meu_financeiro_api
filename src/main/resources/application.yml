@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: demo
+  datasource:
+    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/meu_financeiro}
+    username: ${POSTGRES_USERNAME:postgres}
+    password: ${POSTGRES_PASSWORD:asxkdkkejj345kjsjjk48769nnhdji84ji866499hdjj}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: ${JPA_SHOW_SQL:false}
+    properties:
+      hibernate:
+        format_sql: true
+
+  #flyway:
+   #enabled: false
+server:
+  port: ${PORT:9000}
+  error:
+    include-message: always
+  servlet:
+    context-path: /api
+  cors:
+    allowed-origins: ${CORS_ORIGINS:*}
+
+
+security:
+  jwt:
+    secret-key: ${JWT_SECRET:9qQw+scWm5+QdzokE6HhahAV+mw4kMW7pA1O+I4bnljkzvhg3EsU6NuFIdofJbftoTRFVNA64S61BoIJAp0uvQ==}
+    expiration-time: ${JWT_EXPIRATION_MS:86400000}
